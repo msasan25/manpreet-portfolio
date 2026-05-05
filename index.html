@@ -1,155 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manpreet | Digital Analytics & Martech Specialist</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manpreet | Digital Analytics & Martech Specialist</title>
 
-  <style>
-    body {
-      font-family: "Inter", sans-serif;
-      margin: 0;
-      background: #f7f8fc;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f8fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
 
-    header {
-      padding: 60px 20px 30px;
-      background: white;
-      max-width: 1000px;
-      margin: auto;
-      border-radius: 0 0 20px 20px;
-    }
+  header {
+    padding: 50px 20px 30px;
+    background: white;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    h1 {
-      font-size: 44px;
-      margin-bottom: 10px;
-    }
+  h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
 
-    .subtext {
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 10px;
-    }
+  h2 {
+    font-size: 26px;
+    margin-top: 30px;
+  }
 
-    .tools {
-      margin-top: 10px;
-      font-size: 14px;
-      opacity: 0.7;
-    }
+  .subtext {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 10px;
+  }
 
-    .cta-buttons {
-      margin-top: 20px;
-    }
+  .tools {
+    font-size: 14px;
+    opacity: 0.7;
+  }
 
-    .cta-buttons a {
-      display: inline-block;
-      margin-right: 10px;
-      padding: 10px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+  section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    .primary-btn {
-      background: #3a6cff;
-      color: white;
-    }
+  .cta-top {
+    margin-top: 20px;
+  }
 
-    .primary-btn:hover {
-      background: #2e54c9;
-    }
+  .cta-top a {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 10px;
+  }
 
-    .secondary-btn {
-      background: #eef2ff;
-      color: #3a6cff;
-    }
+  .primary {
+    background: #3a6cff;
+    color: white;
+  }
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+  .secondary {
+    background: #eef3ff;
+    color: #3a6cff;
+  }
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
+  .card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  }
 
-    .snapshot-list span {
-      display: inline-block;
-      background: #e7eeff;
-      padding: 8px 14px;
-      border-radius: 8px;
-      margin: 6px;
-      font-size: 14px;
-    }
+  .card h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+  }
 
-    .project-card {
-      background: white;
-      padding: 18px;
-      border-radius: 14px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: 0.3s;
-    }
+  .meta {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 8px;
+  }
 
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
+  ul {
+    margin-top: 8px;
+    padding-left: 18px;
+  }
 
-    .project-card h3 {
-      margin-top: 0;
-      font-size: 20px;
-    }
+  .skills span {
+    display: inline-block;
+    background: #f2f2f2;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 13px;
+  }
 
-    .project-card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 14px;
-      background: #3a6cff;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+  a {
+    color: #3a6cff;
+    text-decoration: none;
+  }
 
-    .skills span {
-      display: inline-block;
-      background: #f2f2f2;
-      padding: 6px 12px;
-      border-radius: 8px;
-      margin: 5px;
-      font-size: 13px;
-    }
+  .cta {
+    background: #eef3ff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+  }
 
-    ul {
-      padding-left: 18px;
-    }
-
-    .cta {
-      background: #eef3ff;
-      padding: 30px;
-      border-radius: 14px;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .cta a {
-      color: #3a6cff;
-      text-decoration: none;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Hi, I'm Manpreet.</h1>
+
   <p class="subtext">
     Digital Analytics and Martech Specialist with 5 years of experience and 30+ full-stack implementations.
   </p>
@@ -162,20 +136,15 @@
     <strong>Tools:</strong> GA4, GTM, BigQuery, SQL, Looker Studio, Meta Pixel, DataLayer Engineering
   </p>
 
-  <div class="cta-buttons">
-    <a class="primary-btn" href="mailto:manpreetsasan14@gmail.com">Contact Me</a>
-    <a class="secondary-btn" href="https://www.sphinxpoesy.com" target="_blank">Blog</a>
+  <!-- MOVED BUTTONS HERE -->
+  <div class="cta-top">
+    <a class="primary" href="mailto:manpreetsasan14@gmail.com">Contact Me</a>
+    <a class="secondary" href="https://www.sphinxpoesy.com" target="_blank">Blog</a>
   </div>
 </header>
 
 <section>
   <h2>What I Do</h2>
-  <div class="snapshot-list">
-    <span>Analyze</span>
-    <span>Translate</span>
-    <span>Visualize</span>
-    <span>Optimize</span>
-  </div>
   <p>
     I connect events, users, journeys, and funnels into one clean picture so teams can make faster decisions.
   </p>
@@ -184,49 +153,69 @@
 <section>
   <h2>Featured Case Studies</h2>
 
-  <div class="project-card">
-    <h3>GA4 Ecommerce Migration</h3>
-    <p>Full DataLayer build, GTM setup, GA4 mapping and Looker dashboards.</p>
+  <div class="card">
+    <h3>GA4 Ecommerce Migration with Full DataLayer Build</h3>
+    <div class="meta">Large ecommerce brand | GA4 Migration, GTM, DataLayer</div>
+    <ul>
+      <li>Built complete ecommerce DataLayer (impressions, ATC, checkout, purchases)</li>
+      <li>Mapped events to GA4 ecommerce schema</li>
+      <li>QA + debugging tracking setup</li>
+      <li>Looker dashboard for revenue & funnels</li>
+    </ul>
+    <p><strong>Impact:</strong> Improved attribution accuracy and funnel visibility</p>
   </div>
 
-  <div class="project-card">
-    <h3>Realtime Analytics Dashboard</h3>
-    <p>GA4 Realtime API + automation + live dashboards for monitoring users.</p>
+  <div class="card">
+    <h3>Realtime Analytics Dashboard Using GA4 Realtime API</h3>
+    <div class="meta">Global organisation | Realtime data engineering</div>
+    <ul>
+      <li>GA4 Realtime API + Apps Script automation</li>
+      <li>Live sync into Google Sheets</li>
+      <li>Realtime dashboard for users & events</li>
+    </ul>
+    <p><strong>Impact:</strong> 24x7 live monitoring system</p>
   </div>
 
-  <div class="project-card">
-    <h3>GA4 + BigQuery Warehouse</h3>
-    <p>SQL modeling, funnels, cohorts, retention dashboards in Looker Studio.</p>
+  <div class="card">
+    <h3>GA4 + BigQuery Warehouse with SQL Dashboards</h3>
+    <div class="meta">Product company | BigQuery + Looker</div>
+    <ul>
+      <li>GA4 → BigQuery pipeline setup</li>
+      <li>SQL models for funnels, cohorts, revenue</li>
+      <li>Looker dashboards for retention & acquisition</li>
+    </ul>
+    <p><strong>Impact:</strong> Deep product + marketing intelligence layer</p>
   </div>
 
-  <div class="project-card">
-    <h3>Automobile Brand Analytics Setup</h3>
-    <p>End-to-end tracking, GTM setup, iFrame tracking, UTM fixes.</p>
+  <div class="card">
+    <h3>Full Web Analytics Setup for Automobile Brand</h3>
+    <div class="meta">Automobile sector | End-to-end tracking</div>
+    <ul>
+      <li>GA4 + GTM implementation</li>
+      <li>iFrame tracking + UTM fixes</li>
+      <li>Custom channel grouping</li>
+      <li>Click + engagement tracking</li>
+    </ul>
+    <p><strong>Impact:</strong> Strong tracking foundation & clean reporting</p>
   </div>
 </section>
 
 <section>
   <h2>Looker Studio Dashboards</h2>
 
-  <div class="project-card">
+  <div class="card">
     <h3>Ecommerce Performance Dashboard</h3>
-    <a href="https://datastudio.google.com/reporting/23b488f2-c17b-4b31-b55f-4808f72695f7" target="_blank">
-      View Dashboard
-    </a>
+    <a href="https://datastudio.google.com/reporting/23b488f2-c17b-4b31-b55f-4808f72695f7" target="_blank">Open Dashboard</a>
   </div>
 
-  <div class="project-card">
+  <div class="card">
     <h3>Marketing Channel Performance</h3>
-    <a href="https://datastudio.google.com/reporting/b55ae481-d8cc-4d22-9cff-9b6797ecf662" target="_blank">
-      View Dashboard
-    </a>
+    <a href="https://datastudio.google.com/reporting/b55ae481-d8cc-4d22-9cff-9b6797ecf662" target="_blank">Open Dashboard</a>
   </div>
 
-  <div class="project-card">
+  <div class="card">
     <h3>Analytics Overview Dashboard</h3>
-    <a href="https://datastudio.google.com/reporting/b57d2346-9126-4fd5-8bf9-e3ef469279a4" target="_blank">
-      View Dashboard
-    </a>
+    <a href="https://datastudio.google.com/reporting/b57d2346-9126-4fd5-8bf9-e3ef469279a4" target="_blank">Open Dashboard</a>
   </div>
 </section>
 
@@ -238,6 +227,9 @@
     <span>BigQuery</span>
     <span>SQL</span>
     <span>Looker Studio</span>
+    <span>Power BI</span>
+    <span>LookML</span>
+    <span>Agentic AI</span>
     <span>DataLayer</span>
     <span>Meta Pixel</span>
     <span>Server-side tagging</span>
@@ -259,8 +251,8 @@
 <section class="cta">
   <h2>Let’s Work Together</h2>
   <p>Email: <a href="mailto:manpreetsasan14@gmail.com">manpreetsasan14@gmail.com</a></p>
-  <p>Blog: <a href="https://www.sphinxpoesy.com" target="_blank">sphinxpoesy.com</a></p>
-  <p>Book a call: <a href="https://calendar.app.google/G5dNiiThBB6f4xraA" target="_blank">Schedule Meeting</a></p>
+  <p>Blog: <a href="https://www.sphinxpoesy.com">sphinxpoesy.com</a></p>
+  <p>Book a call: <a href="https://calendar.app.google/G5dNiiThBB6f4xraA">Schedule Meeting</a></p>
 </section>
 
 </body>

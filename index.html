@@ -2,258 +2,471 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Manpreet | Digital Analytics & Martech Specialist</title>
+<meta name="description" content="Digital Analytics and Martech Specialist with 5 years of experience and 30+ full-stack implementations across GA4, GTM, BigQuery and Looker Studio." />
+<meta property="og:title" content="Manpreet | Digital Analytics & Martech Specialist" />
+<meta property="og:description" content="GA4, GTM, DataLayer engineering, BigQuery and Looker Studio. Clean tracking systems and reporting that teams can trust." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#f5f7fa" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <style>
+  :root {
+    --paper: #f5f7fa;
+    --surface: #ffffff;
+    --ink: #0f1e2e;
+    --ink-soft: #46566a;
+    --line: #dbe2ec;
+    --blue: #2f5bea;
+    --blue-deep: #1f3fb0;
+    --blue-wash: #e9eefc;
+    --teal: #0b7a6e;
+    --panel: #12233a;
+    --panel-text: #cfdcf0;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f7f8fc;
-    color: #1a1a1a;
-    line-height: 1.6;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
 
-  header {
-    padding: 50px 20px 30px;
-    background: white;
-    max-width: 1000px;
-    margin: auto;
-  }
+  a { color: var(--blue-deep); text-underline-offset: 3px; }
+  a:hover { color: var(--blue); }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  .skip {
+    position: absolute; left: -9999px; top: 8px;
+    background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; z-index: 10;
+  }
+  .skip:focus { left: 8px; }
+
+  /* Top bar */
+  .topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; min-height: 60px; flex-wrap: wrap;
+  }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink); text-decoration: none; }
+  .topbar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .topbar nav a { color: var(--ink-soft); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .topbar nav a:hover { color: var(--blue); }
+
+  /* Hero */
+  .hero { background: var(--surface); border-bottom: 1px solid var(--line); padding: 72px 0 64px; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; }
   h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(40px, 5.6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
   }
+  .lede { font-size: 20px; line-height: 1.55; color: var(--ink); margin: 0 0 16px; max-width: 34em; }
+  .sub { color: var(--ink-soft); margin: 0 0 28px; max-width: 36em; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 8px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: var(--blue-deep); color: #fff; }
+  .btn-quiet { background: var(--surface); color: var(--ink); border-color: var(--line); }
+  .btn-quiet:hover { border-color: var(--blue); color: var(--blue-deep); }
 
+  .facts {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    margin: 36px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line);
+  }
+  .facts div { min-width: 0; }
+  .facts dt { font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1.1; }
+  .facts dd { margin: 4px 0 0; font-size: 14px; color: var(--ink-soft); }
+
+  /* Code panel */
+  .panel {
+    background: var(--panel); color: var(--panel-text);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 20px 40px -24px rgba(15, 30, 46, 0.55);
+  }
+  .panel-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; font-size: 13px; color: #8fa5c4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .panel pre {
+    margin: 0; padding: 18px 18px 20px; overflow-x: auto;
+    font-family: var(--mono); font-size: 13.5px; line-height: 1.7;
+  }
+  .k { color: #8fb4ff; }
+  .s { color: #8be0c8; }
+  .n { color: #f2c98a; }
+  .c { color: #6f87a8; }
+
+  /* Sections */
+  section { padding: 72px 0 8px; }
+  .section-head { max-width: 40em; margin-bottom: 36px; }
   h2 {
-    font-size: 26px;
-    margin-top: 30px;
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .section-head p { margin: 0; color: var(--ink-soft); }
+
+  /* Expertise */
+  .expertise { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 48px; }
+  .expertise h3 { font-family: var(--serif); font-weight: 600; font-size: 21px; margin: 0 0 6px; }
+  .expertise p { margin: 0 0 12px; color: var(--ink-soft); font-size: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+  .chips li {
+    background: var(--blue-wash); color: var(--blue-deep);
+    font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 6px;
   }
 
-  .subtext {
-    font-size: 18px;
-    opacity: 0.85;
-    margin-bottom: 10px;
+  /* Process */
+  .process { counter-reset: step; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+  .process li { counter-increment: step; padding: 18px 18px 0 0; }
+  .process li::before {
+    content: counter(step); display: block;
+    font-family: var(--serif); font-weight: 600; font-size: 15px; color: var(--blue-deep);
+    margin-bottom: 6px;
   }
+  .process strong { display: block; font-size: 16px; margin-bottom: 4px; }
+  .process span { display: block; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
 
-  .tools {
-    font-size: 14px;
-    opacity: 0.7;
+  /* Case studies */
+  .case {
+    display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: 40px;
+    padding: 36px 0; border-top: 1px solid var(--line);
   }
+  .case:first-of-type { border-top: 2px solid var(--ink); }
+  .case h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; line-height: 1.25; margin: 0 0 8px; }
+  .case .context { color: var(--ink-soft); font-size: 15px; margin: 0 0 14px; }
+  .case dl { margin: 0; display: grid; gap: 18px; }
+  .case dt { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .case dd { margin: 0; color: var(--ink-soft); font-size: 16px; }
+  .case dd ul { margin: 0; padding-left: 18px; }
+  .case dd li { margin-bottom: 3px; }
+  .case .outcome dt { color: var(--teal); }
+  .case .outcome dd { color: var(--ink); }
 
-  section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+  /* Dashboards */
+  .dash { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .dash a.tile {
+    display: block; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 10px; padding: 22px; text-decoration: none; color: var(--ink);
+    transition: border-color 0.15s ease;
   }
+  .dash a.tile:hover { border-color: var(--blue); }
+  .dash h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin: 0 0 6px; }
+  .dash p { margin: 0 0 14px; font-size: 15px; color: var(--ink-soft); }
+  .dash .open { font-weight: 600; font-size: 15px; color: var(--blue-deep); }
 
-  .cta-top {
-    margin-top: 20px;
+  /* Strengths */
+  .strengths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 48px; }
+  .strengths h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+  .strengths p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+
+  /* Contact */
+  .contact { margin: 80px 0 0; background: var(--panel); color: #fff; padding: 64px 0; }
+  .contact h2 { color: #fff; }
+  .contact p { color: var(--panel-text); max-width: 34em; margin: 0 0 24px; }
+  .contact .btn-primary { background: #fff; color: var(--panel); }
+  .contact .btn-primary:hover { background: var(--blue-wash); color: var(--panel); }
+  .contact .btn-quiet { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.35); }
+  .contact .btn-quiet:hover { border-color: #fff; color: #fff; }
+  .contact a:focus-visible { outline-color: #fff; }
+  .contact address { font-style: normal; margin-top: 28px; color: var(--panel-text); font-size: 15px; }
+  .contact address a { color: #fff; }
+
+  footer { padding: 24px 0 36px; font-size: 14px; color: var(--ink-soft); background: var(--paper); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .process { grid-template-columns: 1fr; border-top: 0; }
+    .process li { padding: 16px 0; border-top: 1px solid var(--line); }
+    .process li:first-child { border-top: 2px solid var(--ink); }
+    .dash { grid-template-columns: 1fr; }
   }
-
-  .cta-top a {
-    display: inline-block;
-    padding: 10px 14px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    margin-right: 10px;
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .hero { padding: 48px 0 44px; }
+    section { padding-top: 56px; }
+    .expertise, .strengths { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; gap: 20px; }
   }
-
-  .primary {
-    background: #3a6cff;
-    color: white;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
   }
-
-  .secondary {
-    background: #eef3ff;
-    color: #3a6cff;
-  }
-
-  .card {
-    background: white;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 14px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-  }
-
-  .card h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-  }
-
-  .meta {
-    font-size: 13px;
-    opacity: 0.75;
-    margin-bottom: 8px;
-  }
-
-  ul {
-    margin-top: 8px;
-    padding-left: 18px;
-  }
-
-  .skills span {
-    display: inline-block;
-    background: #f2f2f2;
-    padding: 6px 10px;
-    border-radius: 8px;
-    margin: 5px;
-    font-size: 13px;
-  }
-
-  a {
-    color: #3a6cff;
-    text-decoration: none;
-  }
-
-  .cta {
-    background: #eef3ff;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-  }
-
 </style>
 </head>
 
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <h1>Hi, I'm Manpreet.</h1>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Manpreet</a>
+    <nav aria-label="Primary">
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Case studies</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
 
-  <p class="subtext">
-    Digital Analytics and Martech Specialist with 5 years of experience and 30+ full-stack implementations.
-  </p>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Hi, I'm Manpreet.</h1>
+      <p class="lede">Digital Analytics and Martech Specialist. I turn messy marketing and product data into tracking systems and reporting that teams can trust.</p>
+      <p class="sub">I connect events, users, journeys and funnels into one clear picture, from the DataLayer in the browser to the dashboard in front of the team.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+        <a class="btn btn-quiet" href="#work">See case studies</a>
+      </div>
+      <dl class="facts">
+        <div><dt>5 years</dt><dd>in digital analytics and martech</dd></div>
+        <div><dt>30+</dt><dd>full-stack implementations</dd></div>
+      </dl>
+    </div>
 
-  <p>
-    I help businesses turn messy marketing and product data into clean, actionable tracking systems and insights.
-  </p>
-
-  <p class="tools">
-    <strong>Tools:</strong> GA4, GTM, BigQuery, SQL, Looker Studio, Meta Pixel, DataLayer Engineering
-  </p>
-
-  <!-- MOVED BUTTONS HERE -->
-  <div class="cta-top">
-    <a class="primary" href="mailto:manpreetsasan14@gmail.com">Contact Me</a>
-    <a class="secondary" href="https://www.sphinxpoesy.com" target="_blank">Blog</a>
+    <figure class="panel" style="margin:0" aria-label="Example of an ecommerce DataLayer push">
+      <div class="panel-bar"><span>DataLayer example</span><span>purchase event</span></div>
+<pre><code><span class="k">dataLayer</span>.push({ <span class="k">ecommerce</span>: <span class="n">null</span> });
+<span class="k">dataLayer</span>.push({
+  <span class="k">event</span>: <span class="s">"purchase"</span>,
+  <span class="k">ecommerce</span>: {
+    <span class="k">transaction_id</span>: <span class="s">"T-10482"</span>,
+    <span class="k">currency</span>: <span class="s">"USD"</span>,
+    <span class="k">value</span>: <span class="n">128.40</span>,
+    <span class="k">items</span>: [{
+      <span class="k">item_id</span>: <span class="s">"SKU-221"</span>,
+      <span class="k">item_name</span>: <span class="s">"Trail Jacket"</span>,
+      <span class="k">quantity</span>: <span class="n">1</span>
+    }]
+  }
+});
+<span class="c">// sample values, shown for illustration</span></code></pre>
+    </figure>
   </div>
 </header>
 
-<section>
-  <h2>What I Do</h2>
-  <p>
-    I connect events, users, journeys, and funnels into one clean picture so teams can make faster decisions.
-  </p>
+<main id="main">
+
+  <section id="expertise">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I do</h2>
+        <p>I cover the full path from data collection to decision: how events are captured, where they are stored, and how they are reported.</p>
+      </div>
+      <div class="expertise">
+        <div>
+          <h3>Tracking and implementation</h3>
+          <p>GA4 and Google Tag Manager setups built on a clean DataLayer, with QA and debugging so the numbers hold up.</p>
+          <ul class="chips"><li>GA4</li><li>GTM</li><li>DataLayer engineering</li><li>Meta Pixel</li><li>Server-side tagging</li></ul>
+        </div>
+        <div>
+          <h3>Data and warehousing</h3>
+          <p>GA4 to BigQuery pipelines with SQL models for funnels, cohorts and revenue.</p>
+          <ul class="chips"><li>BigQuery</li><li>SQL</li><li>LookML</li></ul>
+        </div>
+        <div>
+          <h3>Reporting and visualisation</h3>
+          <p>Dashboards built around the questions teams ask, covering revenue, funnels, retention and acquisition.</p>
+          <ul class="chips"><li>Looker Studio</li><li>Power BI</li><li>Funnels</li><li>Attribution</li></ul>
+        </div>
+        <div>
+          <h3>Automation and AI</h3>
+          <p>Live monitoring and reporting built with the GA4 Realtime API and Apps Script, plus agentic AI workflows for analytics tasks.</p>
+          <ul class="chips"><li>GA4 Realtime API</li><li>Apps Script</li><li>Agentic AI</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How I work</h2>
+        <p>Most projects follow the same five steps.</p>
+      </div>
+      <ol class="process">
+        <li><strong>Audit</strong><span>Review what is tracked today and where the data breaks down.</span></li>
+        <li><strong>Plan</strong><span>Agree the events, parameters and naming before anything is built.</span></li>
+        <li><strong>Implement</strong><span>Build the DataLayer, tags and data connections.</span></li>
+        <li><strong>QA</strong><span>Test every event end to end and fix issues before launch.</span></li>
+        <li><strong>Report</strong><span>Deliver dashboards the team can read and act on.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Case studies</h2>
+        <p>Selected projects across ecommerce, product and automotive.</p>
+      </div>
+
+      <article class="case">
+        <div>
+          <h3>GA4 ecommerce migration with a full DataLayer build</h3>
+          <p class="context">Large ecommerce brand</p>
+          <ul class="chips"><li>GA4</li><li>GTM</li><li>DataLayer</li><li>Looker Studio</li></ul>
+        </div>
+        <dl>
+          <div><dt>Scope</dt><dd>Migrate ecommerce tracking to GA4 and build the DataLayer it depends on.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Built the complete ecommerce DataLayer: impressions, add to cart, checkout and purchases.</li>
+              <li>Mapped events to the GA4 ecommerce schema.</li>
+              <li>Tested and debugged the tracking setup before launch.</li>
+              <li>Built a Looker Studio dashboard for revenue and funnels.</li>
+            </ul>
+          </dd></div>
+          <div class="outcome"><dt>Outcome</dt><dd>Improved attribution accuracy and funnel visibility.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <div>
+          <h3>Realtime analytics dashboard using the GA4 Realtime API</h3>
+          <p class="context">Global organisation</p>
+          <ul class="chips"><li>GA4 Realtime API</li><li>Apps Script</li><li>Google Sheets</li></ul>
+        </div>
+        <dl>
+          <div><dt>Scope</dt><dd>Give the team a live view of users and events without waiting on standard reports.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Automated data pulls from the GA4 Realtime API with Apps Script.</li>
+              <li>Synced the results live into Google Sheets.</li>
+              <li>Built a realtime dashboard for users and events.</li>
+            </ul>
+          </dd></div>
+          <div class="outcome"><dt>Outcome</dt><dd>A live monitoring system that runs 24x7.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <div>
+          <h3>GA4 and BigQuery warehouse with SQL dashboards</h3>
+          <p class="context">Product company</p>
+          <ul class="chips"><li>GA4</li><li>BigQuery</li><li>SQL</li><li>Looker Studio</li></ul>
+        </div>
+        <dl>
+          <div><dt>Scope</dt><dd>Move beyond standard GA4 reports to a warehouse the team can query for product and marketing questions.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Set up the GA4 to BigQuery pipeline.</li>
+              <li>Wrote SQL models for funnels, cohorts and revenue.</li>
+              <li>Built Looker Studio dashboards for retention and acquisition.</li>
+            </ul>
+          </dd></div>
+          <div class="outcome"><dt>Outcome</dt><dd>A product and marketing intelligence layer the team can build on.</dd></div>
+        </dl>
+      </article>
+
+      <article class="case">
+        <div>
+          <h3>Full web analytics setup for an automobile brand</h3>
+          <p class="context">Automobile sector</p>
+          <ul class="chips"><li>GA4</li><li>GTM</li><li>UTM</li></ul>
+        </div>
+        <dl>
+          <div><dt>Scope</dt><dd>End-to-end tracking from a clean start.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Implemented GA4 and GTM.</li>
+              <li>Added iFrame tracking and fixed UTM issues.</li>
+              <li>Created a custom channel grouping.</li>
+              <li>Tracked clicks and engagement.</li>
+            </ul>
+          </dd></div>
+          <div class="outcome"><dt>Outcome</dt><dd>A strong tracking foundation and clean reporting.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="dashboards">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Looker Studio dashboards</h2>
+        <p>Live examples you can open and explore.</p>
+      </div>
+      <div class="dash">
+        <a class="tile" href="https://datastudio.google.com/reporting/23b488f2-c17b-4b31-b55f-4808f72695f7" target="_blank" rel="noopener">
+          <h3>Ecommerce performance</h3>
+          <p>Revenue, products and the purchase funnel.</p>
+          <span class="open">Open dashboard</span>
+        </a>
+        <a class="tile" href="https://datastudio.google.com/reporting/b55ae481-d8cc-4d22-9cff-9b6797ecf662" target="_blank" rel="noopener">
+          <h3>Marketing channel performance</h3>
+          <p>How each channel drives traffic and conversions.</p>
+          <span class="open">Open dashboard</span>
+        </a>
+        <a class="tile" href="https://datastudio.google.com/reporting/b57d2346-9126-4fd5-8bf9-e3ef469279a4" target="_blank" rel="noopener">
+          <h3>Analytics overview</h3>
+          <p>A single view of site traffic and engagement.</p>
+          <span class="open">Open dashboard</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="strengths">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What clients get</h2>
+      </div>
+      <div class="strengths">
+        <div><h3>Tracking issues found quickly</h3><p>Faster debugging means fewer weeks of bad data.</p></div>
+        <div><h3>Dashboards that tell a story</h3><p>Reports that explain what changed and why it matters.</p></div>
+        <div><h3>DataLayers built from scratch</h3><p>A consistent event structure your developers can maintain.</p></div>
+        <div><h3>Analytics in business language</h3><p>Findings that marketing, product and leadership can all act on.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p>Tell me about your tracking or reporting problem. I will reply with how I would approach it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:manpreetsasan14@gmail.com">Email me</a>
+      <a class="btn btn-quiet" href="https://calendar.app.google/G5dNiiThBB6f4xraA" target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <address>
+      <a href="mailto:manpreetsasan14@gmail.com">manpreetsasan14@gmail.com</a><br />
+      Writing: <a href="https://www.sphinxpoesy.com" target="_blank" rel="noopener">sphinxpoesy.com</a>
+    </address>
+  </div>
 </section>
 
-<section>
-  <h2>Featured Case Studies</h2>
-
-  <div class="card">
-    <h3>GA4 Ecommerce Migration with Full DataLayer Build</h3>
-    <div class="meta">Large ecommerce brand | GA4 Migration, GTM, DataLayer</div>
-    <ul>
-      <li>Built complete ecommerce DataLayer (impressions, ATC, checkout, purchases)</li>
-      <li>Mapped events to GA4 ecommerce schema</li>
-      <li>QA + debugging tracking setup</li>
-      <li>Looker dashboard for revenue & funnels</li>
-    </ul>
-    <p><strong>Impact:</strong> Improved attribution accuracy and funnel visibility</p>
-  </div>
-
-  <div class="card">
-    <h3>Realtime Analytics Dashboard Using GA4 Realtime API</h3>
-    <div class="meta">Global organisation | Realtime data engineering</div>
-    <ul>
-      <li>GA4 Realtime API + Apps Script automation</li>
-      <li>Live sync into Google Sheets</li>
-      <li>Realtime dashboard for users & events</li>
-    </ul>
-    <p><strong>Impact:</strong> 24x7 live monitoring system</p>
-  </div>
-
-  <div class="card">
-    <h3>GA4 + BigQuery Warehouse with SQL Dashboards</h3>
-    <div class="meta">Product company | BigQuery + Looker</div>
-    <ul>
-      <li>GA4 → BigQuery pipeline setup</li>
-      <li>SQL models for funnels, cohorts, revenue</li>
-      <li>Looker dashboards for retention & acquisition</li>
-    </ul>
-    <p><strong>Impact:</strong> Deep product + marketing intelligence layer</p>
-  </div>
-
-  <div class="card">
-    <h3>Full Web Analytics Setup for Automobile Brand</h3>
-    <div class="meta">Automobile sector | End-to-end tracking</div>
-    <ul>
-      <li>GA4 + GTM implementation</li>
-      <li>iFrame tracking + UTM fixes</li>
-      <li>Custom channel grouping</li>
-      <li>Click + engagement tracking</li>
-    </ul>
-    <p><strong>Impact:</strong> Strong tracking foundation & clean reporting</p>
-  </div>
-</section>
-
-<section>
-  <h2>Looker Studio Dashboards</h2>
-
-  <div class="card">
-    <h3>Ecommerce Performance Dashboard</h3>
-    <a href="https://datastudio.google.com/reporting/23b488f2-c17b-4b31-b55f-4808f72695f7" target="_blank">Open Dashboard</a>
-  </div>
-
-  <div class="card">
-    <h3>Marketing Channel Performance</h3>
-    <a href="https://datastudio.google.com/reporting/b55ae481-d8cc-4d22-9cff-9b6797ecf662" target="_blank">Open Dashboard</a>
-  </div>
-
-  <div class="card">
-    <h3>Analytics Overview Dashboard</h3>
-    <a href="https://datastudio.google.com/reporting/b57d2346-9126-4fd5-8bf9-e3ef469279a4" target="_blank">Open Dashboard</a>
-  </div>
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>GA4</span>
-    <span>GTM</span>
-    <span>BigQuery</span>
-    <span>SQL</span>
-    <span>Looker Studio</span>
-    <span>Power BI</span>
-    <span>LookML</span>
-    <span>Agentic AI</span>
-    <span>DataLayer</span>
-    <span>Meta Pixel</span>
-    <span>Server-side tagging</span>
-    <span>Funnels</span>
-    <span>Attribution</span>
-  </div>
-</section>
-
-<section>
-  <h2>Analytics Superpowers</h2>
-  <ul>
-    <li>Spot tracking issues quickly</li>
-    <li>Turn dashboards into stories</li>
-    <li>Build clean DataLayers from scratch</li>
-    <li>Translate analytics into business language</li>
-  </ul>
-</section>
-
-<section class="cta">
-  <h2>Let’s Work Together</h2>
-  <p>Email: <a href="mailto:manpreetsasan14@gmail.com">manpreetsasan14@gmail.com</a></p>
-  <p>Blog: <a href="https://www.sphinxpoesy.com">sphinxpoesy.com</a></p>
-  <p>Book a call: <a href="https://calendar.app.google/G5dNiiThBB6f4xraA">Schedule Meeting</a></p>
-</section>
+<footer>
+  <div class="wrap">© 2026 Manpreet. Digital Analytics &amp; Martech.</div>
+</footer>
 
 </body>
 </html>
